@@ -3,25 +3,32 @@ package com.vitodati.demo.entities;
 import java.io.Serializable;
 import java.util.Objects;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Card implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
-	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	private String name;
 	private int quantity;
-	private double value;
+	private double CardValue;
 	
 	public Card() {
 		
 	}
 
-	public Card(long id, String name, int quantity, long value) {
+	public Card(long id, String name, int quantity, double CardValue) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.quantity = quantity;
-		this.value = value;
+		this.CardValue = CardValue;
 		}
 
 	public long getId() {
@@ -48,12 +55,12 @@ public class Card implements Serializable {
 		this.quantity = quantity;
 	}
 
-	public double getValue() {
-		return value;
+	public double getCardValue() {
+		return CardValue;
 	}
 
-	public void setValue(long value) {
-		this.value = value;
+	public void setValue(double CardValue) {
+		this.CardValue = CardValue;
 	}
 
 	@Override
