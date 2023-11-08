@@ -14,7 +14,7 @@ public class Card implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private Long id;
 	private String name;
 	private int quantity;
 	private double CardValue;
@@ -23,7 +23,7 @@ public class Card implements Serializable {
 		
 	}
 
-	public Card(long id, String name, int quantity, double CardValue) {
+	public Card(Long id, String name, int quantity, double CardValue) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -31,11 +31,11 @@ public class Card implements Serializable {
 		this.CardValue = CardValue;
 		}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
